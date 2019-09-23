@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
+
 class SignUp extends Component {
     constructor() {
         super();
@@ -27,6 +28,8 @@ class SignUp extends Component {
 
     handleSubmit(e) {
         e.preventDefault();
+
+        localStorage.setItem(this.state.email, JSON.stringify(this.state));
 
         console.log('The form was submitted with the following data:');
         console.log(this.state);

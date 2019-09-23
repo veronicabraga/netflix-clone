@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
+
 class Login extends Component {
     constructor() {
         super();
@@ -29,6 +30,13 @@ class Login extends Component {
 
         console.log('The form was submitted with the following data:');
         console.log(this.state);
+
+        let currentAccount = JSON.parse(localStorage.getItem(this.state.email));
+        if(currentAccount != null &&
+          currentAccount.password === this.state.password)
+            console.log("User authenticated successfully!");
+        else
+          console.log("Invalid e-mail or password.");
     }
 
     render() {
