@@ -11,7 +11,7 @@ class MainMovieSelection extends Component {
         super(props);
         console.log(props);
 
-        this.state = [];
+        this.state = {};
     }
 
     render() {
@@ -67,11 +67,6 @@ class MainMovieSelection extends Component {
                     poster={video.poster_path}
                 />
             );
-        return (
-            <div>
-                <div>{listVideoTiles}</div>
-            </div>
-        );
 
         let listUserVideos = data.length === 0 ? <Loader /> :
             data.results.map((video, index) =>
@@ -87,7 +82,8 @@ class MainMovieSelection extends Component {
             );
         return (
             <div>
-                <div>{listUserVideos}</div>
+              <div>{listVideoTiles}</div>
+              <div>{listUserVideos}</div>
             </div>
         );
     }
