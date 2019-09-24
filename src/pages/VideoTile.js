@@ -30,11 +30,17 @@ class VideoTile extends Component {
                         {'Views:'}
                     </div>
 
-                    // console.log(this.props.views)
+
                     <div className='videoTile__views__value'>
 
                         {this.props.views.toLocaleString()}
                     </div>
+
+                    <div className='videoTile__poster__value'>
+
+                        <img src={"https://image.tmdb.org/t/p/w500" + this.props.poster} />
+                    </div>
+
                 </div>
             </div>
         );
