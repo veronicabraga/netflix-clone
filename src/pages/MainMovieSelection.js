@@ -45,10 +45,10 @@ class MainMovieSelection extends Component {
 
         return (
 
-            <div>
+            <div className="container">
               <div className="containerNavbar">
 
-                <nav class="navbar navbar-light bg-light navbar-listvideos">
+                <nav className="navbar navbar-light bg-light navbar-listvideos">
 
                  <div className="NetflixLogo ">
                     <h1 className="netflixLogoVideoList"> NETFLIX</h1>
@@ -79,7 +79,7 @@ class MainMovieSelection extends Component {
 
                   <div className="containerWordsVideos">
                     <div className="GeneralVideos">
-                      <h1>Choose a video</h1>
+                      <h1>Have fun! Choose a video</h1>
                     </div>
 
                     <div className="listVideoTiles">{listVideoTiles}</div>

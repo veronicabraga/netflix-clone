@@ -46,7 +46,7 @@
     font-size: 12px;
     padding-top: 2px;
 }
-
+*/
 .videoTile__title__value {
     width: calc(420px - 60px);
     white-space: nowrap;
@@ -55,7 +55,7 @@
 }
 
 .videoTile__title__value{
-    color:#167ac6;
+    color:white;
 }
 
 .videoTile__title__value:hover{
@@ -63,8 +63,29 @@
     opacity: 0.8;
 }
 
-.videoTile__views__value{
+/*.videoTile__views__value{
     color:#2A2929;
 }*/
 
 
+/*#167ac6*/
+
+
+.videoTile__title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.videoTile__title__value {
+    flex-grow: 2;
+}
+
+.videoTile__title__text {
+    text-transform: uppercase;
+    width: 60px;
+    color: white;
+    font-size: 12px;
+    padding-top: 2px;
+  }
+
+    /*#767676*/

@@ -1,0 +1,25 @@
+
+.containerPlayVideo {
+  background-color: black;
+  margin-top: -45px;
+}
+.buttonListVideos {
+  position: absolute;
+  right: 225px;
+  top: 15px;
+}
+
+.playVideo{
+  height: 100vh;
+}
+
+.video {
+  width: 850px;
+  height: 500px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 90px;
+
+
+}
