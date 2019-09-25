@@ -3,6 +3,8 @@ import VideoTile from './VideoTile.js';
 import Loader from '../Loader.js';
 import { Link } from 'react-router-dom';
 import './MainMovieSelection.css';
+import '../Navbar.css';
+
 
 
 const API_URL = "https://api.themoviedb.org/3/discover/tv?api_key=224ce27b38a3805ecf6f6c36eb3ba9d0&with_networks=213&append_to_response=videos";
@@ -42,21 +44,38 @@ class MainMovieSelection extends Component {
 
 
         return (
-              <div>
+
+            <div>
+              <div className="containerNavbar">
+
+                <nav class="navbar navbar-light bg-light navbar-listvideos">
+
+                 <div className="NetflixLogo ">
+                    <h1 className="netflixLogoVideoList"> NETFLIX</h1>
+                  </div>
+
+
+                  <div className="FormField">
+                     <Link to="/Login" >
+                        <button className="FormField__Button mr-20 buttonLogout">Log out</button>
+                      </Link>
+                    </div>
+                    <div className="FormField">
+                     <Link to="/Profile" >
+                        <button className="FormField__Button mr-20 buttonProfile">Profile</button>
+                      </Link>
+                    </div>
+
+                </nav>
+              </div>
+
+
+
 
                 <div className="listVideos">
 
 
-                  <div className="FormField">
-                   <Link to="/Login" >
-                      <button className="FormField__Button mr-20 buttonLogout">Log out</button>
-                    </Link>
-                  </div>
-                  <div className="FormField">
-                   <Link to="/Profile" >
-                      <button className="FormField__Button mr-20 buttonProfile">Profile</button>
-                    </Link>
-                  </div>
+
 
                   <div className="containerWordsVideos">
                     <div className="GeneralVideos">
@@ -66,7 +85,7 @@ class MainMovieSelection extends Component {
                     <div className="listVideoTiles">{listVideoTiles}</div>
                   </div>
                 </div>
-              </div>
+            </div>
 
           );
 

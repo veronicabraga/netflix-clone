@@ -3,7 +3,7 @@
   /*flex-direction: row;*/
   overflow-x: scroll;
   height: 100vh;
-  position:relative;
+  /*position:relative;*/
 
 }
 
@@ -47,16 +47,8 @@
   display: flex;
 }
 
-.buttonLogout {
-  position: absolute;
-  left: 15px;
-  top: 15px;
-
+.containerWordsVideos {
+  margin-top: 80px;
 }
 
-.buttonProfile {
-  position: absolute;
-  left: 15px;
-  top: 50px;
 
-}
