@@ -66,3 +66,19 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+### Using docker
+
+#### Build the image
+  `docker build -t netflix-clone .`
+
+#### Run the image
+  `docker run -p 8080:3000 netflix-clone`
+
+### Using docker-compose
+
+#### Build the image
+  `docker-compose build`
+
+#### Run the application
+  `docker-compose up`
