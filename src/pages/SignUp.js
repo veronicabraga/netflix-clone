@@ -30,7 +30,16 @@ class SignUp extends Component {
     handleSubmit(e) {
         e.preventDefault();
 
-        localStorage.setItem(this.state.email, JSON.stringify(this.state));
+
+
+        if(this.state.email !== "" && this.state.password !== "" && this.state.name !== "" ) {
+          console.log("User authenticated successfully!");
+          localStorage.setItem(this.state.email, JSON.stringify(this.state));
+          this.props.history.push("/login");
+
+        } else {
+          console.log("Invalid e-mail or password.");
+        }
 
         console.log('The form was submitted with the following data:');
         console.log(this.state);

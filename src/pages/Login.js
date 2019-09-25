@@ -33,11 +33,16 @@ class Login extends Component {
         console.log(this.state);
 
         let currentAccount = JSON.parse(localStorage.getItem(this.state.email));
-        if(currentAccount != null &&
-          currentAccount.password === this.state.password)
-            console.log("User authenticated successfully!");
-        else
+        if(currentAccount != null && currentAccount.password === this.state.password && this.state.password != "") {
+          console.log("User authenticated successfully!");
+          localStorage.setItem("current_user_email", this.state.email);
+
+
+          this.props.history.push("/movies/list");
+
+        } else {
           console.log("Invalid e-mail or password.");
+        }
     }
 
 

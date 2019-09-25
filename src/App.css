@@ -176,6 +176,7 @@
   padding: 15px 70px;
   font-size: 16px;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .FormField__Link {
