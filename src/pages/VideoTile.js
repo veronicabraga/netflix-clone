@@ -20,12 +20,16 @@ class VideoTile extends Component {
     render() {
         return (
             <NavLink to={'/movies/play/'+ this.props.id }>
-            <div className='videoTile' >
+              <div className='videoTile' >
 
-              <div className='videoTile__poster__value'>
-                <img className='imagePoster' src={"https://image.tmdb.org/t/p/w500" + this.props.poster} alt="Video Poster"/>
+
+                      <div className='videoTile__poster__value'>
+                        <img className='imagePoster' src={"https://image.tmdb.org/t/p/w500" + this.props.poster} alt="Video Poster"/>
+                      </div>
+
+
+
               </div>
-            </div>
             </NavLink>
         );
     }
