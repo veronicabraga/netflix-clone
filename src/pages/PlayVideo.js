@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import VideoTile from './VideoTile.js';
 import Loader from '../Loader.js';
 import { Link } from 'react-router-dom';
+import './PlayVideo.css';
+
 
 const API_URL = "https://api.themoviedb.org/3/tv/"
 const API_ARGUMENTS = "?api_key=224ce27b38a3805ecf6f6c36eb3ba9d0&with_networks=213&append_to_response=videos";
@@ -38,19 +40,38 @@ class PlayVideo extends Component {
 
 
         return (
-            <div>
+            <div className="containerPlayVideo">
 
-              <div className="FormField">
-               <Link to="/movies/list" >
-                  <button className="FormField__Button mr-20">Videos List</button>
-                </Link>
-              </div>
+              <nav className="navbar navbar-light bg-light navbar-listvideos">
+
+               <div className="NetflixLogo ">
+                  <h1 className="netflixLogoVideoList"> NETFLIX</h1>
+                </div>
+
+
+                <div className="FormField">
+                 <Link to="/Login" >
+                    <button className="FormField__Button mr-20 buttonLogout">Log out</button>
+                  </Link>
+                </div>
+
+                <div className="FormField">
+                 <Link to="/movies/list" >
+                    <button className="FormField__Button mr-20 buttonListVideos">Videos List</button>
+                  </Link>
+                </div>
+              </nav>
+
+
               <div className="playVideo">
-                <iframe width="420" height="315"
+                <iframe className="video"
                   src={"https://www.youtube.com/embed/"+videoKey}>
                 </iframe>
-                {"https://www.youtube.com/embed/"+videoKey}
+
+
+
               </div>
+
             </div>
           );
 
