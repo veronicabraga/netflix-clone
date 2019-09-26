@@ -8,9 +8,7 @@ import '../Navbar.css';
 
 
 const API_URL = "https://api.themoviedb.org/3/discover/movie?api_key=94bc82bd42936b3c014223890c398da9&with_networks=213&append_to_response=videos";
-/*
- * List of top 10s videos.
- */
+
 class MainMovieSelection extends Component {
     constructor(props) {
         super(props);
@@ -19,7 +17,6 @@ class MainMovieSelection extends Component {
     }
 
     componentDidMount() {
-      // fetch data and update state
       fetch(API_URL)
       .then(response => response.json())
       .then(data => this.setState({results: data.results})).catch();
@@ -49,33 +46,26 @@ class MainMovieSelection extends Component {
 
                 <nav className="navbar navbar-light bg-light navbar-listvideos">
 
-                 <div className="NetflixLogo ">
+                  <div className="NetflixLogo ">
                     <h1 className="netflixLogoVideoList"> NETFLIX</h1>
                   </div>
 
 
                   <div className="FormField">
-                     <Link to="/login" >
-                        <button className="FormField__Button mr-20 buttonLogout">Log out</button>
-                      </Link>
-                    </div>
-                    <div className="FormField">
-                     <Link to="/profile" >
-                        <button className="FormField__Button mr-20 buttonProfile">Profile</button>
-                      </Link>
-                    </div>
+                    <Link to="/login" >
+                      <button className="FormField__Button mr-20 buttonLogout">Log out</button>
+                    </Link>
+                  </div>
 
+                  <div className="FormField">
+                   <Link to="/profile" >
+                      <button className="FormField__Button mr-20 buttonProfile">Profile</button>
+                    </Link>
+                  </div>
                 </nav>
               </div>
 
-
-
-
                 <div className="listVideos">
-
-
-
-
                   <div className="containerWordsVideos">
                     <div className="GeneralVideos">
                       <h1>Have fun! Choose a video</h1>

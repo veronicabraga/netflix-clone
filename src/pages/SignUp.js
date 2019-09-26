@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { HashRouter as Router, Route, Link, NavLink } from 'react-router-dom';
-import Login from './Login';
+import { HashRouter as Link, NavLink } from 'react-router-dom';
+
+
 
 
 class SignUp extends Component {
@@ -44,12 +45,12 @@ class SignUp extends Component {
             </div>
             <div className="App__Form">
               <div className="PageSwitcher">
-                  <NavLink to="/login" activeClassName="PageSwitcher__Item--Active" className="PageSwitcher__Item">Login</NavLink>
-                  <NavLink exact to="/signup" activeClassName="PageSwitcher__Item--Active" className="PageSwitcher__Item">Sign Up</NavLink>
+                <NavLink to="/login" activeClassName="PageSwitcher__Item--Active" className="PageSwitcher__Item">Login</NavLink>
+                <NavLink exact to="/signup" activeClassName="PageSwitcher__Item--Active" className="PageSwitcher__Item">Sign Up</NavLink>
               </div>
 
               <div className="FormTitle">
-                  <NavLink to="/login" activeClassName="FormTitle__Link--Active" className="FormTitle__Link">Login</NavLink> or <NavLink exact to="/signup" activeClassName="FormTitle__Link--Active" className="FormTitle__Link">Sign Up</NavLink>
+                <NavLink to="/login" activeClassName="FormTitle__Link--Active" className="FormTitle__Link">Login</NavLink> or <NavLink exact to="/signup" activeClassName="FormTitle__Link--Active" className="FormTitle__Link">Sign Up</NavLink>
               </div>
 
               <div className="FormCenter">
@@ -69,7 +70,7 @@ class SignUp extends Component {
 
 
                   <div className="FormField">
-                      <button className="FormField__Button mr-20">Sign Up</button> <Link to="/login" className="FormField__Link">I'm already member</Link>
+                      <button className="FormField__Button mr-20">Sign Up</button>
                   </div>
                 </form>
 
