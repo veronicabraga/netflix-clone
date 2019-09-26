@@ -1,3 +1,7 @@
+This project is a frontend version of Netflix developed using React.
+
+![Netflix clone](https://raw.githubusercontent.com/veronicabraga/netflix-clone/master/src/home-netflix.png)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
