@@ -49,7 +49,7 @@ class PlayVideo extends Component {
 
 
                 <div className="FormField">
-                 <Link to="/Login" >
+                 <Link to="/login" >
                     <button className="FormField__Button mr-20 buttonLogout">Log out</button>
                   </Link>
                 </div>
