@@ -9,6 +9,7 @@ import Profile from './Profile';
 const Main = () => {
   return (
     <Switch>
+      <Route exact path='/' component={Login}></Route>
       <Route exact path='/login' component={Login}></Route>
       <Route exact path='/signup' component={SignUp}></Route>
       <Route exact path='/movies/list' component={MainMovieSelection}></Route>

@@ -4,19 +4,18 @@ import Loader from '../Loader.js';
 import { Link } from 'react-router-dom';
 
 
-const API_URL = "https://api.themoviedb.org/3/discover/tv?api_key=224ce27b38a3805ecf6f6c36eb3ba9d0&with_networks=213&append_to_response=videos";
+const API_URL = "https://api.themoviedb.org/3/discover/movie?api_key=224ce27b38a3805ecf6f6c36eb3ba9d0&with_networks=213&append_to_response=videos";
 
 
 class Profile extends Component {
     constructor() {
         super();
-        let email = localStorage.getItem("current_user_email");
-        console.log(email);
+        let currentUserEmail = localStorage.getItem("current_user_email");
         this.state = {
-            name: JSON.parse(localStorage.getItem(email)).name,
-            email: email,
+            name: JSON.parse(localStorage.getItem(currentUserEmail)).name,
+            email: currentUserEmail,
             picture: '',
-            userVideos: JSON.parse(localStorage.getItem('watched_videos')),
+            userVideos: JSON.parse(localStorage.getItem(currentUserEmail+'_watched_videos')),
             allResults: []
         };
       }
@@ -32,7 +31,7 @@ class Profile extends Component {
 
     render() {
 
-      let listUserVideos = this.state.length === 0 ? <Loader /> :
+      let listUserVideos = this.state.length === 0 || this.state.userVideos === null || this.state.userVideos.length === 0 ? <Loader /> :
           this.state.allResults.filter(video => {
             console.log(video.id)
             return this.state.userVideos.includes(String(video.id));

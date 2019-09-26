@@ -7,14 +7,13 @@ import '../Navbar.css';
 
 
 
-const API_URL = "https://api.themoviedb.org/3/discover/tv?api_key=224ce27b38a3805ecf6f6c36eb3ba9d0&with_networks=213&append_to_response=videos";
+const API_URL = "https://api.themoviedb.org/3/discover/movie?api_key=224ce27b38a3805ecf6f6c36eb3ba9d0&with_networks=213&append_to_response=videos";
 /*
  * List of top 10s videos.
  */
 class MainMovieSelection extends Component {
     constructor(props) {
         super(props);
-        console.log(props);
 
         this.state = {results: []};
     }
