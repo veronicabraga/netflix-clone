@@ -25,19 +25,18 @@ class PlayVideo extends Component {
    }
 
     render() {
-        console.log(this.state);
         let videoKey = this.state.length === 0 || this.state.videos.results.length === 0 ? <Loader /> :
             this.state.videos.results[0].key
+        let videoId = this.props.match.params.videoId;
         let currentUserEmail = localStorage.getItem("current_user_email");
         let watchedVideos = JSON.parse(localStorage.getItem(currentUserEmail+'_watched_videos'));
         if (watchedVideos === null) {
           watchedVideos = [];
         }
-        watchedVideos.push(this.props.match.params.videoId);
-        localStorage.setItem(currentUserEmail+'_watched_videos', JSON.stringify(watchedVideos));
-
-
-
+        if(!watchedVideos.slice(watchedVideos.length-5, watchedVideos.length).includes(videoId)) {
+          watchedVideos.push(videoId);
+          localStorage.setItem(currentUserEmail+'_watched_videos', JSON.stringify(watchedVideos));
+        }
 
         return (
             <div className="containerPlayVideo">

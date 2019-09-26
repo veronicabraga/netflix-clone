@@ -30,11 +30,9 @@ class Profile extends Component {
 
 
     render() {
-
-      let listUserVideos = this.state.length === 0 || this.state.userVideos === null || this.state.userVideos.length === 0 ? <Loader /> :
+      let listLastUserVideos = this.state.length === 0 || this.state.userVideos === null || this.state.userVideos.length === 0 ? <Loader /> :
           this.state.allResults.filter(video => {
-            console.log(video.id)
-            return this.state.userVideos.includes(String(video.id));
+            return this.state.userVideos.slice(this.state.userVideos.length-5,this.state.userVideos.length).includes(String(video.id));
           }).map((video, index) =>
 
               <div><VideoTile
@@ -65,7 +63,7 @@ class Profile extends Component {
           <div className="UserVideos">
             <h1>You are seeing</h1>
           </div>
-          <div className="listUserVideos">{listUserVideos}</div>
+          <div className="listUserVideos">{listLastUserVideos}</div>
 
         </div>
 
