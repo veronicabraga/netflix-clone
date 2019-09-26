@@ -1,0 +1,53 @@
+.listlastUserVideos {
+  display: flex;
+}
+
+.containerallinformationprofile {
+  background-color: black;
+  overflow-x: scroll;
+  height: 100vh;
+}
+
+.UserlastVideos h1 {
+  color: #f7f7f7;
+  font-family: 'Roboto', sans-serif;
+  font-size: 26px;
+  width: 400px;
+}
+
+.containerProfile {
+  margin-top: -45px;
+}
+
+.profileInformation h1 {
+  color: #ff0000;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+}
+
+.profileInformation {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 70px;
+  background-color: #ffeecf;
+  border-radius: 8px;
+
+
+}
+
+.profilePicture {
+  width: 100px;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+}
+
+.message {
+  color: #f7f7f7;
+}
+
+.containerWordsPosters {
+  margin: 70px;
+}
