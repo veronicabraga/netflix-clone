@@ -6,7 +6,7 @@ import './PlayVideo.css';
 
 
 const API_URL = "https://api.themoviedb.org/3/movie/"
-const API_ARGUMENTS = "?api_key=224ce27b38a3805ecf6f6c36eb3ba9d0&with_networks=213&append_to_response=videos";
+const API_ARGUMENTS = "?api_key=94bc82bd42936b3c014223890c398da9&with_networks=213&append_to_response=videos";
 
 /*
  * List of top 10s videos.
