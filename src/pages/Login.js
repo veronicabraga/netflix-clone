@@ -29,19 +29,10 @@ class Login extends Component {
     handleSubmit(e) {
         e.preventDefault();
 
-        console.log('The form was submitted with the following data:');
-        console.log(this.state);
-
         let currentAccount = JSON.parse(localStorage.getItem(this.state.email));
         if(currentAccount != null && currentAccount.password === this.state.password && this.state.password != "") {
-          console.log("User authenticated successfully!");
           localStorage.setItem("current_user_email", this.state.email);
-
-
           this.props.history.push("/movies/list");
-
-        } else {
-          console.log("Invalid e-mail or password.");
         }
     }
 

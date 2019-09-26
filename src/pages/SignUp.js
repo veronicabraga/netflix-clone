@@ -30,19 +30,10 @@ class SignUp extends Component {
     handleSubmit(e) {
         e.preventDefault();
 
-
-
         if(this.state.email !== "" && this.state.password !== "" && this.state.name !== "" ) {
-          console.log("User authenticated successfully!");
           localStorage.setItem(this.state.email, JSON.stringify(this.state));
           this.props.history.push("/login");
-
-        } else {
-          console.log("Invalid e-mail or password.");
         }
-
-        console.log('The form was submitted with the following data:');
-        console.log(this.state);
     }
 
     render() {
@@ -58,7 +49,7 @@ class SignUp extends Component {
               </div>
 
               <div className="FormTitle">
-                  <NavLink to="/login" activeClassName="FormTitle__Link--Active" className="FormTitle__Link">Login</NavLink> or <NavLink exact to="/" activeClassName="FormTitle__Link--Active" className="FormTitle__Link">Sign Up</NavLink>
+                  <NavLink to="/login" activeClassName="FormTitle__Link--Active" className="FormTitle__Link">Login</NavLink> or <NavLink exact to="/signup" activeClassName="FormTitle__Link--Active" className="FormTitle__Link">Sign Up</NavLink>
               </div>
 
               <div className="FormCenter">

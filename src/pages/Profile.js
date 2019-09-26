@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import VideoTile from './VideoTile.js';
-import Loader from '../Loader.js';
+import ProfileMessage from './ProfileMessage.js';
 import { Link } from 'react-router-dom';
+import './Profile.css';
+import profilePicture from './profile-picture.jpg';
 
 
 const API_URL = "https://api.themoviedb.org/3/discover/movie?api_key=94bc82bd42936b3c014223890c398da9&with_networks=213&append_to_response=videos";
@@ -30,7 +32,7 @@ class Profile extends Component {
 
 
     render() {
-      let listLastUserVideos = this.state.length === 0 || this.state.userVideos === null || this.state.userVideos.length === 0 ? <Loader /> :
+      let listLastUserVideos = this.state.length === 0 || this.state.userVideos === null || this.state.userVideos.length === 0 ? <ProfileMessage/> :
           this.state.allResults.filter(video => {
             return this.state.userVideos.slice(this.state.userVideos.length-5,this.state.userVideos.length).includes(String(video.id));
           }).map((video, index) =>
@@ -44,26 +46,58 @@ class Profile extends Component {
                   poster={video.poster_path}
               />
 
-               </div>
+              </div>
 
           );
 
       return (
-        <div>
+        <div className="containerProfile">
 
-          <div className="FormField">
-           <Link to="/movies/list" >
-              <button className="FormField__Button mr-20">Videos List</button>
-            </Link>
-          </div>
-          <div>Email:{this.state.email}</div>
-          <div>Name:{this.state.name}</div>
-          <div>{this.state.userVideos}</div>
+          <nav className="navbar navbar-light bg-light navbar-listvideos">
 
-          <div className="UserVideos">
-            <h1>You are seeing</h1>
+            <div className="NetflixLogo ">
+              <h1 className="netflixLogoVideoList"> NETFLIX</h1>
+            </div>
+
+
+            <div className="FormField">
+              <Link to="/login" >
+                <button className="FormField__Button mr-20 buttonLogout">Log out</button>
+              </Link>
+            </div>
+
+            <div className="FormField">
+              <Link to="/movies/list" >
+                <button className="FormField__Button mr-20 buttonListVideos">Videos List</button>
+              </Link>
+            </div>
+          </nav>
+
+          <div className="containerallinformationprofile">
+
+            <div class="profileInformation">
+              <div >
+                <img className="profilePicture" src={profilePicture} alt="Watching netflix" />
+              </div>
+
+              <div>
+                <h1>{this.state.name}</h1>
+              </div>
+
+              <div>
+                <h1>Email: {this.state.email}</h1>
+              </div>
+
+            </div>
+
+            <div className="containerWordsPosters">
+              <div className="UserlastVideos">
+                <h1>You are seeing</h1>
+              </div>
+              <div className="listlastUserVideos">{listLastUserVideos}</div>
+            </div>
+
           </div>
-          <div className="listUserVideos">{listLastUserVideos}</div>
 
         </div>
 
