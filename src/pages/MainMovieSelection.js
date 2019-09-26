@@ -55,12 +55,12 @@ class MainMovieSelection extends Component {
 
 
                   <div className="FormField">
-                     <Link to="/Login" >
+                     <Link to="/login" >
                         <button className="FormField__Button mr-20 buttonLogout">Log out</button>
                       </Link>
                     </div>
                     <div className="FormField">
-                     <Link to="/Profile" >
+                     <Link to="/profile" >
                         <button className="FormField__Button mr-20 buttonProfile">Profile</button>
                       </Link>
                     </div>
