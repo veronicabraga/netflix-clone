@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { HashRouter as Router, Route, Link, NavLink } from 'react-router-dom';
-import SignUp from './SignUp';
+import { HashRouter as Link, NavLink } from 'react-router-dom';
+
 
 class Login extends Component {
     constructor() {
@@ -13,7 +13,7 @@ class Login extends Component {
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-        const getClassname = () => { 'foo' }
+
     }
 
     handleChange(e) {
@@ -30,7 +30,7 @@ class Login extends Component {
         e.preventDefault();
 
         let currentAccount = JSON.parse(localStorage.getItem(this.state.email));
-        if(currentAccount != null && currentAccount.password === this.state.password && this.state.password != "") {
+        if(currentAccount !== null && currentAccount.password === this.state.password && this.state.password !== "") {
           localStorage.setItem("current_user_email", this.state.email);
           this.props.history.push("/movies/list");
         }
@@ -68,7 +68,7 @@ class Login extends Component {
                   </div>
 
                   <div className="FormField">
-                      <button className="FormField__Button mr-20">Login</button> <Link to="/signup" className="FormField__Link">Create an account</Link>
+                      <button className="FormField__Button mr-20">Login</button>
                   </div>
                 </form>
               </div>

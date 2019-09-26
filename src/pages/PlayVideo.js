@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import VideoTile from './VideoTile.js';
 import Loader from '../Loader.js';
 import { Link } from 'react-router-dom';
 import './PlayVideo.css';
@@ -8,9 +7,6 @@ import './PlayVideo.css';
 const API_URL = "https://api.themoviedb.org/3/movie/"
 const API_ARGUMENTS = "?api_key=94bc82bd42936b3c014223890c398da9&with_networks=213&append_to_response=videos";
 
-/*
- * List of top 10s videos.
- */
 class PlayVideo extends Component {
     constructor(props) {
         super(props);
@@ -18,7 +14,6 @@ class PlayVideo extends Component {
     }
 
     componentDidMount() {
-      // fetch data and update state
       fetch(API_URL + this.props.match.params.videoId + API_ARGUMENTS)
       .then(response => response.json())
       .then(data => this.setState({videos: data.videos})).catch();
@@ -43,32 +38,27 @@ class PlayVideo extends Component {
 
               <nav className="navbar navbar-light bg-light navbar-listvideos">
 
-               <div className="NetflixLogo ">
+                <div className="NetflixLogo ">
                   <h1 className="netflixLogoVideoList"> NETFLIX</h1>
                 </div>
 
-
                 <div className="FormField">
-                 <Link to="/login" >
+                  <Link to="/login" >
                     <button className="FormField__Button mr-20 buttonLogout">Log out</button>
                   </Link>
                 </div>
 
                 <div className="FormField">
-                 <Link to="/movies/list" >
+                  <Link to="/movies/list" >
                     <button className="FormField__Button mr-20 buttonListVideos">Videos List</button>
                   </Link>
                 </div>
               </nav>
 
-
               <div className="playVideo">
                 <iframe className="video"
                   src={"https://www.youtube.com/embed/"+videoKey}>
                 </iframe>
-
-
-
               </div>
 
             </div>

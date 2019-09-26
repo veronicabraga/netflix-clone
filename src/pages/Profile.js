@@ -6,6 +6,7 @@ import './Profile.css';
 import profilePicture from './profile-picture.jpg';
 
 
+
 const API_URL = "https://api.themoviedb.org/3/discover/movie?api_key=94bc82bd42936b3c014223890c398da9&with_networks=213&append_to_response=videos";
 
 
@@ -24,7 +25,7 @@ class Profile extends Component {
 
 
     componentDidMount() {
-      // fetch data and update state
+
       fetch(API_URL)
       .then(response => response.json())
       .then(data => this.setState({allResults: data.results})).catch();
@@ -54,7 +55,6 @@ class Profile extends Component {
         <div className="containerProfile">
 
           <nav className="navbar navbar-light bg-light navbar-listvideos">
-
             <div className="NetflixLogo ">
               <h1 className="netflixLogoVideoList"> NETFLIX</h1>
             </div>

@@ -1,16 +1,5 @@
-/*.App {
-  text-align: center;
-}*/
-
 .App {
-   height: 100vh;
-  /*display: flex;*/
-  /*color: red;*/
-  /*justify-content: center;*/
-  /*background-image: url("./background-netflix.jpg");*/
-  /*opacity: 0.9;*/
-  /*position: relative;*/
-
+  height: 100vh;
   display: flex;
   justify-content: center;
   background-image: url("./background-netflix.jpg");
@@ -21,32 +10,6 @@
   width: 100%;
   position: relative;
 }
-
-
-
-/*.Banner {
-  display: flex;
-  justify-content: center;
-  background-image: url("./background-netflix.jpg");
-  filter: brightness(70%);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100%;
-  position: relative;
-}*/
-
-/*.BackgroundImage {
-  background-image: url("./background-netflix.jpg");
-  filter: brightness(60%);*/
-
-  /*height: 100vh;*/
-/*}*/
-
-/*.App__Aside {
-  width: 50%;
-  background-color: #66DAC7;
-}*/
 
 .NetflixLogo {
   position: absolute;
@@ -67,15 +30,10 @@
 .App__Form {
   width: 25%;
   background-color: black;
-  /*background-color: rgba(0, 0, 0, 0.75);*/
-  /*opacity: 0.5;*/
   padding: 25px 50px;
-  /*overflow: auto;*/
   margin-top: 90px;
   margin-bottom: 90px;
-  /*position: absolute;
-  top: 30px;
-  left: 35%;*/
+
 }
 
 .PageSwitcher {
@@ -177,14 +135,6 @@
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
-}
-
-.FormField__Link {
-  color: #66707D;
-  text-decoration: none;
-  display: inline-block;
-  border-bottom: 1.5px solid #225E62;
-  padding-bottom: 5px;
 }
 
 .FormField__CheckboxLabel {
