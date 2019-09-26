@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import './PlayVideo.css';
 
 
-const API_URL = "https://api.themoviedb.org/3/tv/"
+const API_URL = "https://api.themoviedb.org/3/movie/"
 const API_ARGUMENTS = "?api_key=224ce27b38a3805ecf6f6c36eb3ba9d0&with_networks=213&append_to_response=videos";
 
 /*
@@ -14,7 +14,6 @@ const API_ARGUMENTS = "?api_key=224ce27b38a3805ecf6f6c36eb3ba9d0&with_networks=2
 class PlayVideo extends Component {
     constructor(props) {
         super(props);
-        // const { videoId } = this.props;
         this.state = {videos: {results: [{key: null}]},};
     }
 
@@ -29,12 +28,13 @@ class PlayVideo extends Component {
         console.log(this.state);
         let videoKey = this.state.length === 0 || this.state.videos.results.length === 0 ? <Loader /> :
             this.state.videos.results[0].key
-        let watchedVideos = JSON.parse(localStorage.getItem('watched_videos'));
+        let currentUserEmail = localStorage.getItem("current_user_email");
+        let watchedVideos = JSON.parse(localStorage.getItem(currentUserEmail+'_watched_videos'));
         if (watchedVideos === null) {
           watchedVideos = [];
         }
         watchedVideos.push(this.props.match.params.videoId);
-        localStorage.setItem('watched_videos', JSON.stringify(watchedVideos));
+        localStorage.setItem(currentUserEmail+'_watched_videos', JSON.stringify(watchedVideos));
 
 
 
